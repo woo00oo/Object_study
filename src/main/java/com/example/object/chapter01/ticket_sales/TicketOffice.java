@@ -1,5 +1,7 @@
 package com.example.object.chapter01.ticket_sales;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

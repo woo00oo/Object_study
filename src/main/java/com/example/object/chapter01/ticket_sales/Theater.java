@@ -15,14 +15,6 @@ public class Theater {
      * @param audience
      */
     public void enter(Audience audience) {
-        if (audience.getBag().hasInvitation()) {
-            Ticket ticket = this.ticketSeller.getTicketOffice().getTicket();
-            audience.getBag().setTicket(ticket);
-        } else {
-            Ticket ticket = this.ticketSeller.getTicketOffice().getTicket();
-            audience.getBag().minusAmount(ticket.getFee());
-            this.ticketSeller.getTicketOffice().plusAmount(ticket.getFee());
-            audience.getBag().setTicket(ticket);
-        }
+        this.ticketSeller.sellTo(audience);
     }
 }
