@@ -21,17 +21,28 @@ public class Bag {
         this.amount = amount;
     }
 
+    public Long hold(Ticket ticket) {
+        if (hasInvitation()) {
+            setTicket(ticket);
+            return 0L;
+        } else {
+            setTicket(ticket);
+            minusAmount(ticket.getFee());
+            return ticket.getFee();
+        }
+    }
+
     /**
      * 초대장 보유 여부 판단
      */
-    public boolean hasInvitation() {
+    private boolean hasInvitation() {
         return this.invitation != null;
     }
 
     /**
      * 티켓 소유 여부 판단
      */
-    public boolean hasTicket() {
+    private boolean hasTicket() {
         return this.ticket != null;
     }
 
@@ -39,7 +50,7 @@ public class Bag {
      * 초대장을 티켓으로 교환
      * @param ticket
      */
-    public void setTicket(Ticket ticket) {
+    private void setTicket(Ticket ticket) {
         this.ticket = ticket;
     }
 
@@ -47,7 +58,7 @@ public class Bag {
      * 현금 감소
      * @param amount
      */
-    public void minusAmount(Long amount) {
+    private void minusAmount(Long amount) {
         this.amount -= amount;
     }
 
@@ -55,7 +66,7 @@ public class Bag {
      * 현금 증가
      * @param amount
      */
-    public void plusAmount(Long amount) {
+    private void plusAmount(Long amount) {
         this.amount += amount;
     }
 }
