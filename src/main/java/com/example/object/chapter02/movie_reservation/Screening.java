@@ -41,4 +41,23 @@ public class Screening {
     public Money getMovieFee() {
         return this.movie.getFee();
     }
+
+    /**
+     * 영화를 예매하는 기능을 구현하는 메서드
+     * @param customer 예매자
+     * @param audienceCount 인원수
+     * @return Reservation 예매 정보
+     */
+    public Reservation reserve(Customer customer, int audienceCount) {
+        return new Reservation(customer, this, calculateFee(audienceCount), audienceCount);
+    }
+
+    /**
+     * 예매 요금을 계산하는 메서드
+     * @param audienceCount
+     * @return
+     */
+    private Money calculateFee(int audienceCount) {
+        return movie.calculateMovieFee(this).times(audienceCount);
+    }
 }
