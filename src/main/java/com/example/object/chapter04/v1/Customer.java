@@ -1,4 +1,4 @@
-package com.example.object.chapter04;
+package com.example.object.chapter04.v1;
 
 public class Customer {
     private String name;

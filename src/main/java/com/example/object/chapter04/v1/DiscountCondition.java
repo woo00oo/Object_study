@@ -1,4 +1,4 @@
-package com.example.object.chapter04;
+package com.example.object.chapter04.v1;
 
 import lombok.Getter;
 import lombok.Setter;
