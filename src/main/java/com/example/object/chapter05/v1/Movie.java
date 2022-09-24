@@ -1,6 +1,8 @@
-package com.example.object.chapter05;
+package com.example.object.chapter05.v1;
 
 import com.example.object.chapter02.movie_reservation.Money;
+import com.example.object.chapter05.Screening;
+import com.example.object.chapter05.v2.DiscountCondition;
 
 import java.time.Duration;
 import java.util.List;

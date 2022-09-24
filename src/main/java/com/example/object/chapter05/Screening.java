@@ -2,6 +2,7 @@ package com.example.object.chapter05;
 
 import com.example.object.chapter02.movie_reservation.Money;
 import com.example.object.chapter04.v2.Customer;
+import com.example.object.chapter05.v1.Movie;
 
 import java.time.LocalDateTime;
 

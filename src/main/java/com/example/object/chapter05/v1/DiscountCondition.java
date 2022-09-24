@@ -1,4 +1,6 @@
-package com.example.object.chapter05;
+package com.example.object.chapter05.v1;
+
+import com.example.object.chapter05.Screening;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;
