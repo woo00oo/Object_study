@@ -1,4 +1,4 @@
-package com.example.object.chapter05.repector;
+package com.example.object.chapter05.repector.v1;
 
 import com.example.object.chapter02.movie_reservation.Money;
 import com.example.object.chapter04.v1.*;
