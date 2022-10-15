@@ -15,4 +15,8 @@ public class Client {
         return movie.getFee();
 
     }
+
+    public void SERVICE_LOCATOR() {
+        ServiceLocator.provide(new AmountDiscountPolicy(Money.wons(1000), new SequenceCondition(1)));
+    }
 }
