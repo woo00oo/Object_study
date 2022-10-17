@@ -1,4 +1,4 @@
-package com.example.object.chapter10;
+package com.example.object.chapter10.v1;
 
 import com.example.object.chapter02.movie_reservation.Money;
 
