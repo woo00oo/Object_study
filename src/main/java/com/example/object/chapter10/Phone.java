@@ -16,10 +16,13 @@ public class Phone {
     private Duration seconds;
     // 전체 통화 목록
     private List<Call> calls = new ArrayList<>();
+    /// 세율
+    private double taxRate;
 
-    public Phone(Money amount, Duration seconds) {
+    public Phone(Money amount, Duration seconds, double taxRate) {
         this.amount = amount;
         this.seconds = seconds;
+        this.taxRate = taxRate;
     }
 
     public void call(Call call) {
@@ -45,7 +48,7 @@ public class Phone {
             result = result.plus(amount.times(call.getDuration().getSeconds() / seconds.getSeconds()));
         }
 
-        return result;
+        return result.plus(result.times(taxRate));
 
     }
 
