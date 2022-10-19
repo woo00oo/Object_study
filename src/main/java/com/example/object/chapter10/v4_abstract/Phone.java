@@ -3,20 +3,28 @@ package com.example.object.chapter10.v4_abstract;
 import com.example.object.chapter02.movie_reservation.Money;
 import com.example.object.chapter10.v1.Call;
 
-import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
+public abstract class Phone {
 
-public class Phone extends AbstractPhone {
-    private Money amount;
-    private Duration seconds;
+    private double taxRate;
+    private List<Call> calls = new ArrayList<>();
 
-    public Phone(Money amount, Duration seconds) {
-        this.amount = amount;
-        this.seconds = seconds;
+    public Phone(double taxRate) {
+        this.taxRate = taxRate;
     }
 
-    @Override
-    protected Money calculateCallFe(Call call) {
-        return amount.times(call.getDuration().getSeconds() / seconds.getSeconds());
+    public Money calculateFee() {
+        Money result = Money.ZERO;
+
+        for(Call call : calls) {
+            result = result.plus(calculateCallFe(call));
+        }
+
+        return result.plus(result.times(taxRate));
     }
+
+    abstract protected Money calculateCallFe(Call call);
+
 }

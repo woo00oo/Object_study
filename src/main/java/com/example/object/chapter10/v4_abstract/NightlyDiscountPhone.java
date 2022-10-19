@@ -5,13 +5,11 @@ import com.example.object.chapter02.movie_reservation.Money;
 import com.example.object.chapter10.v1.Call;
 
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 심야 할인 요금제
  */
-public class NightlyDiscountPhone extends AbstractPhone {
+public class NightlyDiscountPhone extends Phone {
     private static final int LATE_NIGHT_HOUR = 22;
 
     private Money nightlyAmount;
@@ -19,7 +17,8 @@ public class NightlyDiscountPhone extends AbstractPhone {
     private Duration seconds;
 
     public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount,
-                                Duration seconds) {
+                                Duration seconds, double taxRate) {
+        super(taxRate);
         this.nightlyAmount = nightlyAmount;
         this.regularAmount = regularAmount;
         this.seconds = seconds;
