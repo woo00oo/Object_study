@@ -35,6 +35,14 @@ public class Lecture {
         return String.format("Pass : %d Fail : %d", passCount(), failCount());
     }
 
+    public String stats() {
+        return String.format("Title : %s, Evaluation Method: %s", title, getEvaluationMethod());
+    }
+
+    public String getEvaluationMethod() {
+        return "Pass or Fail";
+    }
+
     private long passCount() {
         return this.scores.stream()
                 .filter(score -> score >= pass).count();

@@ -26,6 +26,11 @@ public class GradeLecture extends Lecture {
                 .orElse(0d);
     }
 
+    @Override
+    public String getEvaluationMethod() {
+        return "Grade";
+    }
+
     private double gradeAverage(Grade grade) {
         return getScores().stream()
                 .filter(grade::include)
