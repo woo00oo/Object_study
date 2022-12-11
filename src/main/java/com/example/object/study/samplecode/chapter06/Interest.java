@@ -5,5 +5,10 @@ import java.time.LocalDate;
 
 public class Interest {
     private BigDecimal amount;
-    private LocalDate PaymentDate;
+    private LocalDate PaymentDate; // 지급 일자
+
+    public Interest(BigDecimal amount, LocalDate paymentDate) {
+        this.amount = amount;
+        PaymentDate = paymentDate;
+    }
 }
