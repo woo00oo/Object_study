@@ -17,6 +17,4 @@ public class Movie {
     private MovieType movieType;
     private Money discountAmount;
     private double discountPercent;
-
-
 }
